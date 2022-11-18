@@ -75,15 +75,30 @@ export default function App(){
       </View>
 
       <View style={styles.containerAlertView}>
-
+        <Text>Nome: {nome}</Text>
+        <Text>Idade: {idade}</Text>
+        <Text>Sexo: {sx}</Text>
+        <Text>Valor solicitado: R$:{valor}</Text>
       </View>
 
       <View style={styles.buttonContainer}>
-
+          <Button
+            onPress={getDados}
+            title="OK"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
       </View>
 
     </ImageBackground>
   );
+
+  function getDados(){
+    alert( `Esses são os seus dados: Nome: ${nome},
+    Idade: ${idade} Anos, Sexo: ${sx}, Valor desejado: ${valor} ` );
+    // getElementsByClassName('containerAlertView').style.flex = 'none'
+  }
+
 }
 const styles = StyleSheet.create({
   containerImageBackground:{
@@ -157,8 +172,13 @@ const styles = StyleSheet.create({
   },
 
   containerAlertView:{
-    borderWidth: 1,
-    flex: 2
+    backgroundColor: '#cececebe',
+    height: 250,
+    width: 250,
+    alignSelf: 'center',
+    borderRadius: 10,
+    // display: 'none'
+    
   },
 
 
